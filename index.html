@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bowser/1.0.0/bowser.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<style>
+body
+{
+  overflow:hidden;
+}
+.imgConatiner
+{
+  float:left;
+
+}
+#param-text
+{
+  display:hide;
+}
+#p
+{
+  display:hide;
+}
+.row {
+  margin-left:250px;
+
+}
+#btn {
+
+}
+</style>
+</head>
+<body>
+  <div id="param-text">
+
+<!-- <p>I know your browser and it is <span></span></p> -->
+<center><img src="images/param_logo_black_header.svg"><br><br><br>
+<img src="images/warning.svg">
+<h2>Oops...your browser is not supported!</h2>
+<h2 style="color:grey;">To use param we recommend you to use latest version of<br>one of these browsers </h2>
+<div class="row">
+ <div class="col-md-12">
+    <div class="col-md-2">
+
+        <img src="images/chrome.svg" height="80" width="80"/>
+        <center>Google Chrome<br> Version 49+</center>
+
+    </div>
+    <div class="col-md-2">
+        <img class="middle-img" src="images/safari.svg"/ height="80" width="80"/>
+       <center>Apple Safari<br> Version 10.1+</center>
+    </div>
+    <div class="col-md-2">
+         <img src="images/mozilla.svg"/ height="80" width="80"/>
+           <center>Mozilla Firefox<br> Version 47+</center>
+    </div>
+    <div class="col-md-2">
+         <img src="images/ie.svg"/ height="80" width="80"/>
+         <center>Google Chrome<br> No longer supported</center>
+    </div>
+    <div class="col-md-2">
+         <img src="images/edge.svg"/ height="80" width="80"/>
+         <center>Google Chrome<br> Version 15+</center>
+    </div>
+    <div class="col-md-8">
+    </div>
+    <div id="container" style="margin-left:550px;display:inline-block;">
+      <img src="images/warning.svg" width="20" height="20"><p>Current version <span></span></p>
+      <div>
+</div>
+
+</div>
+</center>
+</div>
+<div id="p">
+  <br><br>
+  <center>
+    <p>Your browser version is <span></span> </p>Proceed to
+  <a href="https://param.ai/"><img src="images/param_logo_black_header.svg" ></a>
+</center>
+</div>
+<script>
+
+
+  	$("span").text(Math.round(bowser.version));
+
+ if ((bowser.chrome && bowser.version>=49) || (bowser.safari && bowser.version>=10) || (bowser.firefox && bowser.version>=47) ||
+ (bowser.msedge && bowser.version>=15)) {
+	$('#param-text').hide();
+  $('#p').show();
+}
+else {
+  $('#param-text').show();
+  $('#p').hide();
+	// $("span").text("No longer supported");
+}
+
+</script>
+</body>
+</html>
